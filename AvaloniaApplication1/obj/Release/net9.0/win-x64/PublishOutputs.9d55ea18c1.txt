@@ -1,0 +1,5 @@
+C:\Users\Dodik\Desktop\AvaloniaApplication1.pdb
+C:\Users\Dodik\Desktop\av_libglesv2.dll
+C:\Users\Dodik\Desktop\libHarfBuzzSharp.dll
+C:\Users\Dodik\Desktop\libSkiaSharp.dll
+C:\Users\Dodik\Desktop\AvaloniaApplication1.exe

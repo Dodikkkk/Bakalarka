@@ -1,0 +1,5 @@
+C:\Users\Dodik\Desktop\Track Browser\AvaloniaApplication1.pdb
+C:\Users\Dodik\Desktop\Track Browser\av_libglesv2.dll
+C:\Users\Dodik\Desktop\Track Browser\libHarfBuzzSharp.dll
+C:\Users\Dodik\Desktop\Track Browser\libSkiaSharp.dll
+C:\Users\Dodik\Desktop\Track Browser\AvaloniaApplication1.exe

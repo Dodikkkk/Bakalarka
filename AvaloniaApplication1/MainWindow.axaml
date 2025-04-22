@@ -1,0 +1,76 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="https://github.com/DmitryNizhebovsky/Avalonia.RangeSlider"
+        xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+        xmlns:mapsui="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
+        x:Class="AvaloniaApplication1.MainWindow"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="900"
+        Width="1200" Height="900"
+        MinWidth="300" MinHeight="450"
+        Title="Track Browser"
+        WindowStartupLocation="CenterScreen"
+        RequestedThemeVariant="Light">
+    
+    <ScrollViewer Name="ScrollViewer">
+        <StackPanel Name="StackPanel">
+            <TextBlock Name="TrackNameTextBlock" FontSize="24" FontWeight="Bold" Text="Track Name"></TextBlock> <!-- nadpis trate -->
+            <controls:RangeSlider PropertyChanged="RangeSlider_OnPropertyChanged" Name="RangeSlider" Margin="10 0 10 0" Minimum="0" IsThumbOverlap="False"/> <!-- slider obmedzujuci rozsah -->
+            
+            <!-- ukazovatele zaciatku a konca trate -->
+            <Grid ColumnDefinitions="Auto, *" Margin="10 0 10 20">
+                <TextBlock Name="LabelLower" Grid.Column="0" FontWeight="Bold"></TextBlock>
+                <TextBlock Name="LabelUpper" Grid.Column="1" HorizontalAlignment="Right" FontWeight="Bold"></TextBlock>
+            </Grid>
+            
+            <!-- mapa -->
+            <mapsui:MapControl Name="Map" HorizontalAlignment="Stretch" Height="600"/>
+            
+            <!-- ukazovatele zakladnych statistik a graf elevacie v case -->
+            <Grid ColumnDefinitions="*, *, *, *" Margin="10 0 10 0">
+                <TextBlock Name="DistanceTextBlock" Grid.Column="0" HorizontalAlignment="Center" FontWeight="Bold"></TextBlock>
+                <TextBlock Name="DurationTextBlock" Grid.Column="1" HorizontalAlignment="Center" FontWeight="Bold"></TextBlock>
+                <TextBlock Name="TotalClimbTextBlock" Grid.Column="2" HorizontalAlignment="Center" FontWeight="Bold"></TextBlock>
+                <TextBlock Name="TotalDescendTextBlock" Grid.Column="3" HorizontalAlignment="Center" FontWeight="Bold"></TextBlock>
+            </Grid>
+            <lvc:CartesianChart
+                Margin="0 0 0 20"
+                AnimationsSpeed="0"
+                HorizontalAlignment="Stretch"
+                Height="100"
+                Name="ElevationChart">
+            </lvc:CartesianChart>
+        
+            <!-- informacia a graf o rychlosti v case -->
+            <TextBlock Name="AverageSpeedTextBlock" Margin="50 0 0 0" FontWeight="Bold"></TextBlock>
+            <lvc:CartesianChart
+                Margin="0 0 0 20"
+                AnimationsSpeed="0"
+                HorizontalAlignment="Stretch"
+                Height="100"
+                Name="SpeedChart">
+            </lvc:CartesianChart>
+            
+            <!-- informacia a graf o teplote v case -->
+            <TextBlock Name="AverageTemperatureTextBlock" Margin="50 0 0 0" FontWeight="Bold"></TextBlock>
+            <lvc:CartesianChart
+                Margin="0 0 0 20"
+                AnimationsSpeed="0"
+                HorizontalAlignment="Stretch"
+                Height="100"
+                Name="TemperatureChart">
+            </lvc:CartesianChart>
+            
+            <!-- informacia a graf o srdcovom tepe v case -->
+            <TextBlock Name="AverageHeartRateTextBlock" Margin="50 0 0 0" FontWeight="Bold"></TextBlock>
+            <lvc:CartesianChart
+                AnimationsSpeed="0"
+                HorizontalAlignment="Stretch"
+                Height="100"
+                Name="HeartRateChart">
+            </lvc:CartesianChart>
+        </StackPanel>
+    </ScrollViewer>
+    
+</Window>
